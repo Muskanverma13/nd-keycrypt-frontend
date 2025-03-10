@@ -2,7 +2,7 @@
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import FeatureSection from './components/FeatureSection';
-import Demo from './components/Demo';
+// import Demo from './components/Demo';
 import AboutSection from './components/AboutSection';
 
 
@@ -20,9 +20,9 @@ const App = () => {
           <FeatureSection />
         </section>
 
-        <section id="demo">
+        {/* <section id="demo">
           <Demo />
-        </section>
+        </section> */}
 
         <section id="about">
           <AboutSection/>

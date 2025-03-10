@@ -24,9 +24,9 @@ const handleScroll = (id) => {
 
 export const navItems = [
   { label: "Home", href: "home" },
-  { label: "About", href: "about" },
   { label: "Features", href: "features" },
-  { label: "Demo", href: "demo" },
+  { label: "About", href: "about" },
+  // { label: "Demo", href: "demo" },
 ];
 const Navbar = () => {
   return (
