@@ -1,20 +1,35 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
 
-const handleScroll = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
-
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDraweropen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleNavbar = () => {
     setMobileDraweropen(!mobileDrawerOpen);
+  };
+
+  const handleScroll = (id) => {
+    // If we're not on the home page, navigate to home first
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      // Wait a moment for the navigation to complete
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -22,26 +37,28 @@ const Navbar = () => {
       <div className="container px-4 mx-auto relative text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10 mr-2" src={logo} alt="logo" />
-            <span className="text-xl tracking-tight">N-D-Crypt</span>
+            <Link to="/" className="flex items-center">
+              <img className="h-10 w-10 mr-2" src={logo} alt="logo" />
+              <span className="text-xl tracking-tight">N-D-KeyCrypt</span>
+            </Link>
           </div>
 
           {/* Desktop Navbar */}
-          <ul className="hidden lg:flex ml-2 space-x-12">
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <button onClick={() => handleScroll(item.href)}>{item.label}</button>
-              </li>
-            ))}
-          </ul>
+          <ul className="hidden lg:flex ml-2 space-x-20">
+  {navItems.map((item, index) => (
+    <li key={index}>
+      <button onClick={() => handleScroll(item.href)}>{item.label}</button>
+    </li>
+  ))}
+</ul>
 
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a href="#" className="py-2 px-3 border rounded-md">
+            <Link 
+              to="/codelab" 
+              className="py-2 px-3 border rounded-md hover:bg-orange-500 hover:border-orange-500 transition-colors"
+            >
               Code Lab
-            </a>
-            {/* <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md">
-              Create an account
-            </a> */}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,17 +75,23 @@ const Navbar = () => {
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <button onClick={() => handleScroll(item.href)}>{item.label}</button>
+                  <button onClick={() => {
+                    handleScroll(item.href);
+                    setMobileDraweropen(false);
+                  }}>
+                    {item.label}
+                  </button>
                 </li>
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
+              <Link 
+                to="/codelab" 
+                className="py-2 px-3 border rounded-md hover:bg-orange-500 hover:border-orange-500 transition-colors"
+                onClick={() => setMobileDraweropen(false)}
+              >
                 Code Lab
-              </a>
-              {/* <a href="#" className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800">
-                Create an account
-              </a> */}
+              </Link>
             </div>
           </div>
         )}
@@ -78,81 +101,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// import {Menu,X} from "lucide-react";
-// import {useState} from "react";
-// import logo from "../assets/logo.png";
-// import { navItems } from "../constants";
-
-// const handleScroll = (id) => {
-//     const section = document.getElementById(id);
-//     if (section) {
-//       section.scrollIntoView({ behavior: "smooth" });
-//     }
-//   };
-
-// const Navbar = () => {
-//     const [mobileDrawerOpen, setMobileDraweropen] = useState(false);
-
-//     const toggleNavbar = () => {
-//         setMobileDraweropen(!mobileDrawerOpen);
-//     };
-//   return (
-//     <nav className= "sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
-//     <div className= "container px-4 mx-auto relative text-sm">
-// <div className="flex justify-between items-centre">
-//     <div className="flex items-centre flex-shrink-0">
-//         <img className="h-10 w-10 mr-2"src={logo} alt="logo" />
-//         <span className="text-xl tracking-tight">N-D-Crypt</span>
-//     </div>
-//     <ul className="hidden lg:flex ml-14 space-x-12">
-// {navItems.map((item, index) => (
-// <li key={index}>
-//     <a href={item.href}>{item.label}</a>
-// </li>
-// ))}
-//     </ul>
-//     <div className="hidden lg:flex justify-centre space-x-12 items-center">
-//     <a href="#" className="py-2 px-3 border rounded-md">
-//         Sign In
-//     </a>
-//     <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md">
-//         Create an account
-//     </a>
-//     </div>
-//     <div className="lg:hidden md:flex flex-col justify-end">
-//         <button onClick={toggleNavbar}>
-//             {mobileDrawerOpen ? <X /> : <Menu/>}
-//         </button>
-//     </div>
-// </div>
-// {mobileDrawerOpen && (
-//     <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
-//         <ul>
-//             {navItems.map((item, index) => (
-//                 <li key={index} className="py-4">
-//                     <a href={item.href}>{item.label}</a>
-//                 </li>
-//             ))}
-//         </ul>
-//         <div className="flex space-x-6">
-//             <a href="#" className="py-2 px-3 border rounded-md">
-//                 Sign In
-//             </a>
-//             <a
-//                 href="#"
-//                 className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
-//               >
-//                 Create an account
-//               </a>
-//         </div>
-
-//     </div>
-
-// )}
-//     </div>
-//     </nav>
-//   )
-// }
-
-// export default Navbar

@@ -26,6 +26,7 @@ export const navItems = [
   { label: "Home", href: "home" },
   { label: "Features", href: "features" },
   { label: "About", href: "about" },
+  { label: "The-Deep-End", href: "theDeepend"}
   // { label: "Demo", href: "demo" },
 ];
 const Navbar = () => {
@@ -192,7 +193,6 @@ export const features = [
     }
 
   ]
-
 
 export const checklistItems = [
   {

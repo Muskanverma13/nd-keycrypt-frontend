@@ -1,5 +1,6 @@
 import { about } from "../constants";
 
+
 const AboutSection = () => {
   return (
     <div className="relative mt-10 border-b border-neutral-800 h-auto">
