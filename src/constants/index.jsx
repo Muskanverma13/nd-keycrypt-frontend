@@ -132,63 +132,63 @@ export const features = [
   //     "Try various ciphers with live encryption.",
   // },
 ];
-  export const Demo = [
-    {
-      title: "Caesar Cipher",
-      videoUrl: "https://www.youtube.com/embed/JtbKh_12ctg?si=qficO8ZGkyxuSJuu",
-      description: "Learn how the Caesar Cipher shifts letters for encryption.",
-    },
-    {
-      title: "Transposition Cipher",
-      videoUrl: "https://www.youtube.com/embed/cPQXaYUMOjQ?si=Oolq8qYVu8hI9VxP",
-      description: "Understand the mechanics of the Transposition Cipher.",
-    },
-    {
-      title: "Playfair Cipher",
-      videoUrl: "https://www.youtube.com/embed/UURjVI5cw4g?si=YLaUWdTOV9z5uzWN",
-      description: "Explore the Playfair Cipher and its encryption technique.",
-    },
-    {
-      title: "3DES Algorithm",
-      videoUrl: "https://www.youtube.com/embed/4R_kocR1roM?si=A6dSiYDMZN88NTnw",
-      description: "Understand Triple DES encryption for data security.",
-    },
-    {
-      title: "AES Encryption",
-      videoUrl: "https://www.youtube.com/embed/3MPkc-PFSRI?si=HilGjy-5u0slH7oK",
-      description: "Learn about the AES standard for secure encryption.",
-    },
-    {
-      title: "RSA Encryption",
-      videoUrl: "https://www.youtube.com/embed/Pq8gNbvfaoM?si=_5TV6UK_OMhaw8U8",
-      description: "Discover how RSA encryption secures digital communication.",
-    },
-    {
-      title: "ECC Cryptography",
-      videoUrl: "https://www.youtube.com/embed/dCvB-mhkT0w?si=HtPGNQxKqejKADZY",
-      description: "Learn about Elliptic Curve Cryptography and its applications.",
-    },
-    {
-      title: "EDDSA Signing",
-      videoUrl: "https://www.youtube.com/embed/OfnJGLiLkRk?si=OW9ZW4dVuY9Bc0_W",
-      description: "Understand EDDSA and its role in digital signatures.",
-    },
-    {
-      title: "Diffie-Hellman Key Exchange",
-      videoUrl: "https://www.youtube.com/embed/pa4osob1XOk?si=A1MV47kRDFnz4Owf",
-      description: "See how Diffie-Hellman allows secure key exchanges.",
-    },
-    {
-      title: "Crystals-Kyber Post-Quantum Security",
-      videoUrl: "https://www.youtube.com/embed/your-video-id10",
-      description: "Explore post-quantum encryption with Crystals-Kyber.",
-    }
-  ];
+  // export const Demo = [
+  //   {
+  //     title: "Caesar Cipher",
+  //     videoUrl: "https://www.youtube.com/embed/JtbKh_12ctg?si=qficO8ZGkyxuSJuu",
+  //     description: "Learn how the Caesar Cipher shifts letters for encryption.",
+  //   },
+  //   {
+  //     title: "Transposition Cipher",
+  //     videoUrl: "https://www.youtube.com/embed/cPQXaYUMOjQ?si=Oolq8qYVu8hI9VxP",
+  //     description: "Understand the mechanics of the Transposition Cipher.",
+  //   },
+  //   {
+  //     title: "Playfair Cipher",
+  //     videoUrl: "https://www.youtube.com/embed/UURjVI5cw4g?si=YLaUWdTOV9z5uzWN",
+  //     description: "Explore the Playfair Cipher and its encryption technique.",
+  //   },
+  //   {
+  //     title: "3DES Algorithm",
+  //     videoUrl: "https://www.youtube.com/embed/4R_kocR1roM?si=A6dSiYDMZN88NTnw",
+  //     description: "Understand Triple DES encryption for data security.",
+  //   },
+  //   {
+  //     title: "AES Encryption",
+  //     videoUrl: "https://www.youtube.com/embed/3MPkc-PFSRI?si=HilGjy-5u0slH7oK",
+  //     description: "Learn about the AES standard for secure encryption.",
+  //   },
+  //   {
+  //     title: "RSA Encryption",
+  //     videoUrl: "https://www.youtube.com/embed/Pq8gNbvfaoM?si=_5TV6UK_OMhaw8U8",
+  //     description: "Discover how RSA encryption secures digital communication.",
+    // },
+    // {
+    //   title: "ECC Cryptography",
+    //   videoUrl: "https://www.youtube.com/embed/dCvB-mhkT0w?si=HtPGNQxKqejKADZY",
+    //   description: "Learn about Elliptic Curve Cryptography and its applications.",
+    // },
+    // {
+    //   title: "EDDSA Signing",
+    //   videoUrl: "https://www.youtube.com/embed/OfnJGLiLkRk?si=OW9ZW4dVuY9Bc0_W",
+    //   description: "Understand EDDSA and its role in digital signatures.",
+    // },
+  //   {
+  //     title: "Diffie-Hellman Key Exchange",
+  //     videoUrl: "https://www.youtube.com/embed/pa4osob1XOk?si=A1MV47kRDFnz4Owf",
+  //     description: "See how Diffie-Hellman allows secure key exchanges.",
+  //   },
+  //   {
+  //     title: "Crystals-Kyber Post-Quantum Security",
+  //     videoUrl: "https://www.youtube.com/embed/your-video-id10",
+  //     description: "Explore post-quantum encryption with Crystals-Kyber.",
+  //   }
+  // ];
   export const about = [
     {
       title: "About N&D-Crypt",
       description: `In today's digital world, encryption is essential for securing data and communication. N&D-Crypt is an interactive platform designed to simplify and explore the core concepts of symmetric and asymmetric encryption algorithms. Whether you're a beginner in cryptography or a tech enthusiast looking to deepen your understanding, N&D-Crypt provides an engaging, hands-on learning experience.Our platform covers essential symmetric encryption techniques, including Caesar Cipher, Transposition Cipher, Playfair Cipher, 3DES, and AES—the fundamental building blocks of modern data security. Users can input text and experience real-time encryption and decryption, helping them grasp how these algorithms function.
-  On the asymmetric encryption side, N&D-Crypt features RSA, ECC, EDDSA, Diffie-Hellman, and Crystals-Kyber, vital for secure communication, digital signatures, and public-key cryptography. The platform enables users to generate public and private keys, allowing them to visualize encryption in real-world applications.At N&D-Crypt, we believe in learning by doing. Through an intuitive interface, users can explore encryption techniques, understand their mathematical foundations, and test their knowledge with interactive exercises. Whether you're looking to master basic ciphers or advanced cryptographic methods, this platform serves as a comprehensive and beginner-friendly guide to modern encryption.
+  On the asymmetric encryption side, N&D-Crypt features RSA, Diffie-Hellman, and Crystals-Kyber, vital for secure communication, digital signatures, and public-key cryptography. The platform enables users to generate public and private keys, allowing them to visualize encryption in real-world applications.At N&D-Crypt, we believe in learning by doing. Through an intuitive interface, users can explore encryption techniques, understand their mathematical foundations, and test their knowledge with interactive exercises. Whether you're looking to master basic ciphers or advanced cryptographic methods, this platform serves as a comprehensive and beginner-friendly guide to modern encryption.
   Start your cryptographic journey with N&D-Crypt and unlock the secrets of encryption! `
     }
 

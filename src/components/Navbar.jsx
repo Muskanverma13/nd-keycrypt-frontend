@@ -1,7 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
 import { navItems } from "../constants";
 
 const Navbar = () => {
@@ -32,25 +31,35 @@ const Navbar = () => {
     }
   };
 
+  // Special handler for The-Deep-End
+  const handleTheDeepEnd = () => {
+    navigate('/thedeepend');
+    setMobileDraweropen(false);
+  };
+
   return (
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
       <div className="container px-4 mx-auto relative text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img className="h-10 w-10 mr-2" src={logo} alt="logo" />
+              
               <span className="text-xl tracking-tight">N-D-KeyCrypt</span>
             </Link>
           </div>
 
           {/* Desktop Navbar */}
           <ul className="hidden lg:flex ml-2 space-x-20">
-  {navItems.map((item, index) => (
-    <li key={index}>
-      <button onClick={() => handleScroll(item.href)}>{item.label}</button>
-    </li>
-  ))}
-</ul>
+            {navItems.map((item, index) => (
+              <li key={index}>
+                {item.label === "The-Deep-End" ? (
+                  <Link to="/thedeepend">{item.label}</Link>
+                ) : (
+                  <button onClick={() => handleScroll(item.href)}>{item.label}</button>
+                )}
+              </li>
+            ))}
+          </ul>
 
           <div className="hidden lg:flex justify-center space-x-12 items-center">
             <Link 
@@ -75,12 +84,18 @@ const Navbar = () => {
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <button onClick={() => {
-                    handleScroll(item.href);
-                    setMobileDraweropen(false);
-                  }}>
-                    {item.label}
-                  </button>
+                  {item.label === "The-Deep-End" ? (
+                    <button onClick={handleTheDeepEnd}>
+                      {item.label}
+                    </button>
+                  ) : (
+                    <button onClick={() => {
+                      handleScroll(item.href);
+                      setMobileDraweropen(false);
+                    }}>
+                      {item.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

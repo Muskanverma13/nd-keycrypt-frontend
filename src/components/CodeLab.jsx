@@ -50,20 +50,7 @@ const CodeLab = () => {
       bgColor: "bg-orange-600",
       category: "Asymmetric",
     },
-    {
-      id: 7,
-      name: "ECC",
-      description: "Elliptic Curve Cryptography offers equivalent security with smaller key sizes, making it ideal for constrained environments.",
-      bgColor: "bg-teal-600",
-      category: "Asymmetric",
-    },
-    {
-      id: 8,
-      name: "EdDSA",
-      description: "Edwards-curve Digital Signature Algorithm provides fast, secure digital signatures using twisted Edwards curves.",
-      bgColor: "bg-indigo-600",
-      category: "Digital Signatures",
-    },
+    
     {
       id: 9,
       name: "Diffie-Hellman",

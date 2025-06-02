@@ -1,17 +1,21 @@
+
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import Features from './components/Features';
 import CodeLab from './components/CodeLab';
-import CaesarCipherCompiler from './components/CaesarCipherCompiler';
-import AnimatedEllipticCurve from './components/AnimatedEllipticCurve'; // Import the new component
+// import CaesarCipherCompiler from './components/CaesarCipherCompiler';
+import AlgorithmPage  from './components/AlgorithmPage';
+import TheDeepEnd  from './components/TheDeepEnd';
+
+
 
 // Layout component that includes Navbar and the background animation
 const Layout = () => {
   return (
     <>
-      <AnimatedEllipticCurve /> {/* Add the background animation */}
+      {/* Add the background animation */}
       <Navbar />
       <div className="max-w-7xl mx-auto pt-20 px-6 relative z-10">
         <Outlet />
@@ -35,6 +39,7 @@ const HomePage = () => {
       <section id="about">
         <AboutSection />
       </section>
+    
     </>
   );
 };
@@ -55,8 +60,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'codelab/:algorithmId',
-        element: <CaesarCipherCompiler />
+        element: <AlgorithmPage /> 
+      },
+      {
+        path: 'thedeepend',
+        element: <TheDeepEnd/>
       }
+
     ]
   }
 ]);

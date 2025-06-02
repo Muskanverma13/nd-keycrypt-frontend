@@ -1,4 +1,5 @@
 // AlgorithmSelection.js
+"use client";
 import React from "react";
 
 const AlgorithmSelection = ({ algorithms, setSelectedAlgo }) => {
