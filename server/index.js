@@ -28,6 +28,21 @@ app.use((req, res, next) => {
   next();
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'N-D-Key Crypt API Server', 
+    status: 'running',
+    version: '1.0.0',
+    endpoints: [
+      'GET /health',
+      'GET /api/crypto/algorithms',
+      'POST /api/crypto/encrypt',
+      'POST /api/crypto/decrypt'
+    ]
+  });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
