@@ -6,11 +6,18 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*', // or use specific origin below for more security
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
+  origin: 'https://n-d-key-crypt.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: false
 }));
-app.use(express.json());
+
+app.options('*', cors({
+  origin: 'https://n-d-key-crypt.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: false
+}));
 
 // Debug middleware
 app.use((req, res, next) => {
