@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*'
+  origin: 'https://n-d-key-crypt.vercel.app/'
 }));
 app.use(express.json());
 
