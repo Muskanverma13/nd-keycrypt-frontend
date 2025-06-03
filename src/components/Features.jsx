@@ -8,7 +8,8 @@ import SectionToggle from "./SectionToggle";
 import DescriptiveSection from "./DescriptiveSection";
 import theoryTopics from "./theoryTopics";
 
-const API_BASE_URL = "http://localhost:5000/api/crypto";
+// FIXED: Changed to your deployed backend URL
+const API_BASE_URL = "https://nd-keycrypt-backend.onrender.com/api/crypto";
 
 const Features = () => {
   const [activeSection, setActiveSection] = useState("interactive");

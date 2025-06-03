@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api/crypto';
+const API_BASE_URL = 'https://nd-keycrypt-backend.onrender.com/api/crypto';
 
 export const getAlgorithms = async () => {
   try {
