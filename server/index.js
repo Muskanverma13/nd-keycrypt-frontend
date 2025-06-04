@@ -5,13 +5,22 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://n-d-key-crypt.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
+
+// Keep your existing cors middleware as well
 app.use(cors({
   origin: 'https://n-d-key-crypt.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-  preflightContinue: false,
-  optionsSuccessStatus: 204
+  credentials: true
 }));
 app.use(express.json());
 
