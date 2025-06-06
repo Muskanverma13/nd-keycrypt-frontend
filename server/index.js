@@ -6,7 +6,8 @@ const port = process.env.PORT || 10000;
 
 // Middleware
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://n-d-key-crypt-git-master-muskanverma0213gmailcoms-projects.vercel.app/');
+  console.log('Request Origin:', req.headers.origin);
+  res.header('Access-Control-Allow-Origin', 'https://n-d-key-crypt-git-master-muskanverma0213gmailcoms-projects.vercel.app');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -19,7 +20,7 @@ app.use((req, res, next) => {
 
 // Keep your existing cors middleware as well
 app.use(cors({
-  origin: 'https://n-d-key-crypt-git-master-muskanverma0213gmailcoms-projects.vercel.app/',
+  origin: 'https://n-d-key-crypt-git-master-muskanverma0213gmailcoms-projects.vercel.app',
   credentials: true
 }));
 app.use(express.json());
