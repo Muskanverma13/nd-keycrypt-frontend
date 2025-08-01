@@ -7,6 +7,7 @@ const port = process.env.PORT || 10000;
 // Allowed origins (local + deployed)
 const allowedOrigins = [
   'http://localhost:5173',
+  'https://n-d-key-crypt.vercel.app',
   'https://n-d-key-crypt-git-master-muskanverma0213gmailcoms-projects.vercel.app'
 ];
 
